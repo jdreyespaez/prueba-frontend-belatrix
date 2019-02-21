@@ -64,7 +64,6 @@ const callback = (err, data) => {
               };
               if (obj.codigo.length > 0) {
                 dist.push(obj);
-                console.log(dist);
               }
             }
         })
@@ -90,7 +89,7 @@ const callback = (err, data) => {
     });
 
     // 3.3: Creating file dist.json
-    fs.writeFile("./data/dist.json", JSON.stringify(prov, null, 4), (err) => {
+    fs.writeFile("./data/dist.json", JSON.stringify(dist, null, 4), (err) => {
       if (err) {
           console.error(err);
           return;

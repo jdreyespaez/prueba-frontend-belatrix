@@ -1,44 +1,20 @@
 [
     {
-        "codigo": "50",
-        "nombre": "Lima",
-        "lineDadCode": "01",
-        "lineDadName": "Lima"
+        "codigo": "202",
+        "lineDistName": "La Molina",
+        "lineProvCode": "50",
+        "lineProvName": "Lima"
     },
     {
-        "codigo": "51",
-        "nombre": "Barranca",
-        "lineDadCode": "01",
-        "lineDadName": "Lima"
+        "codigo": "203",
+        "lineDistName": "San Isidro",
+        "lineProvCode": "50",
+        "lineProvName": "Lima"
     },
     {
-        "codigo": "50",
-        "nombre": "Lima",
-        "lineDadCode": "01",
-        "lineDadName": "Lima"
-    },
-    {
-        "codigo": "50",
-        "nombre": "Lima",
-        "lineDadCode": "01",
-        "lineDadName": "Lima"
-    },
-    {
-        "codigo": "63",
-        "nombre": "Arequipa",
-        "lineDadCode": "02",
-        "lineDadName": "Arequipa"
-    },
-    {
-        "codigo": "64",
-        "nombre": "Caylloma",
-        "lineDadCode": "02",
-        "lineDadName": "Arequipa"
-    },
-    {
-        "codigo": "63",
-        "nombre": "Arequipa",
-        "lineDadCode": "02",
-        "lineDadName": "Arequipa"
+        "codigo": "267",
+        "lineDistName": "Cercado ",
+        "lineProvCode": "63",
+        "lineProvName": "Arequipa"
     }
 ]
