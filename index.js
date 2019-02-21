@@ -46,20 +46,28 @@ const callback = (err, data) => {
               };
               if (obj.nombre.length > 0 || obj.codigo.length > 0) {
                 prov.push(obj);
-                console.log(prov);
               }
             }
         })
     });
 
     // Step 3: Creating the JSON to be rendered
-    // 3.1: The file depto.json
+    // 3.1: Creating file depto.json
     fs.writeFile("./data/depto.json", JSON.stringify(depto, null, 4), (err) => {
         if (err) {
             console.error(err);
             return;
         };
         console.log("JSON file for Depto was created.");
+    });
+
+    // 3.2: Creating file prov.json
+    fs.writeFile("./data/prov.json", JSON.stringify(prov, null, 4), (err) => {
+      if (err) {
+          console.error(err);
+          return;
+      };
+      console.log("JSON file for Prov was created.");
     });
 
     } catch (e) {
