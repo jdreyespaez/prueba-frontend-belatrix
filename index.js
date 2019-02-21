@@ -31,6 +31,8 @@ const callback = (err, data) => {
               return (isUndefined ? lineArray[2].split(" ")[3] : "")
             }
             const lineDistName = `${lineArray[2].split(" ")[2]} ${add(true)}`;
+            const lineProvCode = lineArray[1].split(" ")[1];
+            const lineProvName = lineArray[1].split(" ")[2];
 
             // 2.3: Building the array for Depto
             if (index === 0) {
@@ -57,6 +59,8 @@ const callback = (err, data) => {
               const obj = {
                 codigo: first[1],
                 lineDistName,
+                lineProvCode,
+                lineProvName,
               };
               if (obj.codigo.length > 0) {
                 dist.push(obj);
