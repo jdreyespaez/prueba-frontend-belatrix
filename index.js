@@ -9,6 +9,7 @@ const callback = (err, data) => {
     const parsed = JSON.parse(toString);
     const cleaned = parsed.replace(/“|”/g, "");
     const newArray = cleaned.split("\n");
+    // Step 1: Making the plain text usable
     console.log(newArray);
 };
 
