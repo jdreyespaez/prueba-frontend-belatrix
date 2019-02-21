@@ -28,7 +28,8 @@ const callback = (err, data) => {
             
             // DIST: To construct the parent relationship we'll use lineArray[1] and lineArray[2]
             function add(isUndefined) {
-              return (isUndefined ? lineArray[2].split(" ")[3] : "")
+              return lineArray[2].split(' ')[3] || '';
+              // return (isUndefined ? lineArray[2].split(" ")[3] : "")
             }
             const lineDistName = `${lineArray[2].split(" ")[2]} ${add(true)}`;
             const lineProvCode = lineArray[1].split(" ")[1];
