@@ -71,7 +71,7 @@ const callback = (err, data) => {
 
     // Step 3: Creating the JSON to be rendered
     // 3.1: Creating file depto.json
-    fs.writeFile("./data/depto.json", JSON.stringify(depto, null, 4), (err) => {
+    fs.writeFile("./client/src/data/depto.json", JSON.stringify(depto, null, 4), (err) => {
         if (err) {
             console.error(err);
             return;
@@ -80,7 +80,7 @@ const callback = (err, data) => {
     });
 
     // 3.2: Creating file prov.json
-    fs.writeFile("./data/prov.json", JSON.stringify(prov, null, 4), (err) => {
+    fs.writeFile("./client/src/data/prov.json", JSON.stringify(prov, null, 4), (err) => {
       if (err) {
           console.error(err);
           return;
@@ -89,7 +89,7 @@ const callback = (err, data) => {
     });
 
     // 3.3: Creating file dist.json
-    fs.writeFile("./data/dist.json", JSON.stringify(dist, null, 4), (err) => {
+    fs.writeFile("./client/src/data/dist.json", JSON.stringify(dist, null, 4), (err) => {
       if (err) {
           console.error(err);
           return;
