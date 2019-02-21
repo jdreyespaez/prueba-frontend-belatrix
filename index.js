@@ -89,6 +89,15 @@ const callback = (err, data) => {
       console.log("JSON file for Prov was created.");
     });
 
+    // 3.3: Creating file dist.json
+    fs.writeFile("./data/dist.json", JSON.stringify(prov, null, 4), (err) => {
+      if (err) {
+          console.error(err);
+          return;
+      };
+      console.log("JSON file for Dist was created.");
+    });
+
     } catch (e) {
         console.log(e);
     }
