@@ -11,6 +11,13 @@ const callback = (err, data) => {
     const newArray = cleaned.split("\n");
     // Step 1: Making the plain text usable
     console.log(newArray);
+
+    // Step 2: Separating the elements into arrays
+    newArray.forEach(element => {
+
+    }) catch (e) {
+        console.log(e);
+    }
 };
 
 fs.readFile("./file.txt", "utf8", callback);
