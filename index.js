@@ -19,13 +19,18 @@ const callback = (err, data) => {
         const lineArray = element.split("/");
         lineArray.forEach((code, index) =>{
             // 2.2: first and lineArray will be the places to extract the data
+            // DEPTO: The input for the parent will be the same: first
             const first = code.split(" ");
             
             // PROV: To identify the parent we'll use lineArray[0]
             const lineDadCode = lineArray[0].split(" ")[0];
             const lineDadName = lineArray[0].split(" ")[1];
-            console.log(lineDadCode);
-            console.log(lineDadName);
+            
+            // DIST: To construct the parent relationship we'll use lineArray[1] and lineArray[2]
+            function add(isUndefined) {
+              return (isUndefined ? lineArray[2].split(" ")[3] : "")
+            }
+            const lineDistName = `${lineArray[2].split(" ")[2]} ${add(true)}`;
 
             // 2.3: Building the array for Depto
             if (index === 0) {
@@ -33,7 +38,7 @@ const callback = (err, data) => {
                   codigo: first[0],
                   nombre: first[1],
               };
-              if (obj.nombre.length > 0 || obj.codigo.lenght > 0) {
+              if (obj.nombre.length > 0 || obj.codigo.length > 0) {
                   depto.push(obj);
               }
             // 2.4: Building the array for Prov
@@ -46,6 +51,16 @@ const callback = (err, data) => {
               };
               if (obj.nombre.length > 0 || obj.codigo.length > 0) {
                 prov.push(obj);
+              }
+            // 2.5: Building the array for Dist
+            } else if (index === 2) {
+              const obj = {
+                codigo: first[1],
+                lineDistName,
+              };
+              if (obj.codigo.length > 0) {
+                dist.push(obj);
+                console.log(dist);
               }
             }
         })
