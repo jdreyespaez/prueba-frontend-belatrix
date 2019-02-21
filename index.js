@@ -20,10 +20,31 @@ const callback = (err, data) => {
         lineArray.forEach((code, index) =>{
             // 2.2: first and lineArray will be the places to extract the data
             const first = code.split(" ");
-            console.log(first);
-            console.log(lineArray);
+            
+            // 2.3: Building the array for Depto
+            if (index === 0) {
+                const obj = {
+                    codigo: first[0],
+                    nombre: first[1],
+                };
+                if (obj.nombre.length > 0 || obj.codigo.lenght > 0) {
+                    depto.push(obj);
+                }
+                console.log(depto);
+            }
         })
     });
+
+    // Step 3: Creating the JSON to be rendered
+    // 3.1: The file depto.json
+    fs.writeFile("./data/depto.json", JSON.stringify(depto, null, 4), (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        };
+        console.log("JSON file for Depto was created.");
+    });
+
     } catch (e) {
         console.log(e);
     }
