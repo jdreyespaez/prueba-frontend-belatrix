@@ -21,16 +21,33 @@ const callback = (err, data) => {
             // 2.2: first and lineArray will be the places to extract the data
             const first = code.split(" ");
             
+            // PROV: To identify the parent we'll use lineArray[0]
+            const lineDadCode = lineArray[0].split(" ")[0];
+            const lineDadName = lineArray[0].split(" ")[1];
+            console.log(lineDadCode);
+            console.log(lineDadName);
+
             // 2.3: Building the array for Depto
             if (index === 0) {
-                const obj = {
-                    codigo: first[0],
-                    nombre: first[1],
-                };
-                if (obj.nombre.length > 0 || obj.codigo.lenght > 0) {
-                    depto.push(obj);
-                }
-                console.log(depto);
+              const obj = {
+                  codigo: first[0],
+                  nombre: first[1],
+              };
+              if (obj.nombre.length > 0 || obj.codigo.lenght > 0) {
+                  depto.push(obj);
+              }
+            // 2.4: Building the array for Prov
+            } else if (index === 1) {
+              const obj = {
+                codigo: first[1],
+                nombre: first[2],
+                lineDadCode,
+                lineDadName,
+              };
+              if (obj.nombre.length > 0 || obj.codigo.length > 0) {
+                prov.push(obj);
+                console.log(prov);
+              }
             }
         })
     });
