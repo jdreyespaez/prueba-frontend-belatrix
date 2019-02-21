@@ -1,2 +1,2 @@
-# Prueba de Frontend
-Prueba de Frontend para Belatrix.
+# Test for Frontend
+Test for Belatrix.

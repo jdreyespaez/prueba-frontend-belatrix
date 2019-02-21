@@ -8,7 +8,8 @@ const callback = (err, data) => {
     const toString = JSON.stringify(data);
     const parsed = JSON.parse(toString);
     const cleaned = parsed.replace(/“|”/g, "");
-    console.log(cleaned);
+    const newArray = cleaned.split("\n");
+    console.log(newArray);
 };
 
 fs.readFile("./file.txt", "utf8", callback);
