@@ -5,6 +5,7 @@ const prov = [];
 const dist = [];
 
 const callback = (err, data) => {
+    try {
     const toString = JSON.stringify(data);
     const parsed = JSON.parse(toString);
     const cleaned = parsed.replace(/“|”/g, "");
@@ -15,7 +16,8 @@ const callback = (err, data) => {
     // Step 2: Separating the elements into arrays
     newArray.forEach(element => {
 
-    }) catch (e) {
+    });
+    } catch (e) {
         console.log(e);
     }
 };
