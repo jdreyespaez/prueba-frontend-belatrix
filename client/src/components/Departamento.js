@@ -6,19 +6,17 @@ class Departamento extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {array: DataDepto};
+    const counter = {}
+    DataDepto.forEach((depto) => {
+      counter[depto.codigo] = depto; 
+    })
+    this.state = {deptos: Object.values(counter) };
   }
+  
 
     onNavigateHome(){
         browserHistory.push('/inicio');
     }
-
-    // onFilter(){
-    //   this.state.array = this.state.array.filter((obj, pos, arr) => {
-    //   return arr.map(mapObj =>
-    //     mapObj.codigo).indexOf(obj.codigo) === pos;
-    //   });
-    // }
 
     render () {
         return (
@@ -33,7 +31,7 @@ class Departamento extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                    {DataDepto.map(function(deptoDetail, key) {
+                    {this.state.deptos.map((deptoDetail, key) =>  {
                     return (
                       <tr key = {key}>
                         <td>{deptoDetail.codigo}</td>
@@ -43,14 +41,6 @@ class Departamento extends Component {
                     })}
                 </tbody>
                 </table>
-
-              
-                <button
-                  onClick={this.onFilter}
-                  className="btn btn-success"
-                >
-                  Filtrar
-                </button>
 
                 <button
                   onClick={this.onNavigateHome}

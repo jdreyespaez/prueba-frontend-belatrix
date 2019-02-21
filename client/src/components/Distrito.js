@@ -39,13 +39,6 @@ class Distrito extends Component {
                 </tbody>
                 </table>
 
-              
-                <button
-                  onClick={this.onFilter}
-                  className="btn btn-success"
-                >
-                  Filtrar
-                </button>
 
                 <button
                   onClick={this.onNavigateHome}

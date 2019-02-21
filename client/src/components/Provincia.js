@@ -6,7 +6,12 @@ class Provincia extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {array: DataProv};
+        const counter = {}    
+        DataProv.forEach((prov) => {
+          counter[prov.codigo] = prov; 
+        })
+        this.state = {provs: Object.values(counter) };
+    
       }
 
     onNavigateHome(){
@@ -26,7 +31,7 @@ class Provincia extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                    {DataProv.map(function(provDetail, key) {
+                    {this.state.provs.map(function(provDetail, key) {
                     return (
                       <tr key = {key}>
                         <td>{provDetail.codigo}</td>
@@ -39,13 +44,6 @@ class Provincia extends Component {
                 </tbody>
                 </table>
 
-              
-                <button
-                  onClick={this.onFilter}
-                  className="btn btn-success"
-                >
-                  Filtrar
-                </button>
 
                 <button
                   onClick={this.onNavigateHome}
