@@ -1,4 +1,4 @@
-# Test for Frontend
+# Frontend Test @Belatrix
 Test for Belatrix.
 Instructions to run the project:
 1. Clone the repo.
